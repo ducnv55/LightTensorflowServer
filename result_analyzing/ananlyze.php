@@ -6,8 +6,9 @@ for ($i = 0; $i < count($lines); $i+=2) {
 	$output[$key] = $lines[$i+1];
 }
 foreach ($output as $key => $value) {
-	echo $key . ": " . $value;
-	if ($key == "cat" && $value * 100 > 90) {
-		exec("php /var/www/html/raspberry_pin/switch.php");
+	print_r($key . ": " . $value*100 . "%\n");
+	if ((string)$key == "dog" && (int)($value*100) > 90) {
+		print_r($key . " is detected\n");
+		shell_exec("php /var/www/html/raspberry_pin/switch.php");
 	}
 }

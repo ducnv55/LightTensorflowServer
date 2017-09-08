@@ -2,7 +2,7 @@
 <html>
 <head>
 	<link rel="stylesheet" href="frontend/bootstrap.min.css">
-<script src="frontend/jquery.min.js"></script>
+	<script src="frontend/jquery.min.js"></script>
 </head>
 <body>
 
@@ -32,4 +32,5 @@
 	</div>
 
 </body>
+<script src="frontend/main.js"></script>
 </html>

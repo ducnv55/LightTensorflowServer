@@ -13,6 +13,12 @@
 	} else {
 		$light_on = false;
 	}
+	$lines = file('result_analyzing/result.txt');
+	$output = array();
+	for ($i = 0; $i < count($lines); $i+=2) {
+        	$key = trim(preg_replace('/\s+/', ' ', $lines[$i]));
+        	$output[$key] = $lines[$i+1];
+	}	
 	?>
 
 
@@ -25,9 +31,10 @@
 	</div>
 	<div class = "col-lg-12 row" style="font-size: 200%">
 		<div class = "col-lg-3"></div>
-		<div class = "col-lg-2 text-center ">minh: <strong>0.9999</strong></div>
-		<div class = "col-lg-2 text-center">abc: <strong>aeg</strong></div>
-		<div class = "col-lg-2 text-center">def: <strong>agejiowjg</strong></div>
+		<?php
+		foreach ($output as $key => $value) { ?>
+			<div class = "col-lg-2 text-center "><?php echo $key?>: <strong id="<?php echo $key?>"><?php echo $value * 100?>%</strong></div>
+		<?php } ?>
 		<div class = "col-lg-3"></div>
 	</div>
 

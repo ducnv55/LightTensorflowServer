@@ -3,8 +3,9 @@ $lines = file('/var/www/html/result_analyzing/result.txt');
 $output = array();
 for ($i = 0; $i < count($lines); $i+=2) {
 	$key = trim(preg_replace('/\s+/', ' ', $lines[$i]));
-	$output[$key] = $lines[$i+1];
+	$output[$key] = trim(preg_replace('/\s+/', ' ', $lines[$i+1]));
 }
+file_put_contents('/var/www/html/result_analyzing/result_json.txt', json_encode($output));
 foreach ($output as $key => $value) {
 	print_r($key . ": " . $value*100 . "%\n");
 	if ((string)$key == "dog" && (int)($value*100) > 90) {

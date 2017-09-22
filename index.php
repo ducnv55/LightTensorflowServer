@@ -19,7 +19,7 @@
 	<div class = "col-lg-12 row">
 		<div class = "col-lg-2"></div>
 		<div class = "col-lg-8 text-center">
-			<img src = "<?php echo 'img/' . ($light_on ? 'light_on.png' : 'light_off.png') ?>" style="height:500px" class = "img-responsive"/>
+			<img id = "light_img" src = "<?php echo 'img/' . ($light_on ? 'light_on.png' : 'light_off.png') ?>" style="height:500px" class = "img-responsive"/>
 		</div>
 		<div class = "col-lg-2"></div>
 	</div>
@@ -32,5 +32,5 @@
 	</div>
 
 </body>
-<script src="frontend/main.js"></script>
+<script src="frontend/main.js?"></script>
 </html>
